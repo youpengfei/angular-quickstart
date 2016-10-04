@@ -8,10 +8,17 @@ import {DashboardComponent} from "./component/dashboard.component";
 import {HeroesComponent} from "./component/heroes.component";
 import {HeroService} from "./service/hero.service";
 import {InMemoryDataService} from "./in-memory-data.service";
-import { InMemoryWebApiModule } from 'angular2-in-memory-web-api';
+import {InMemoryWebApiModule} from "angular2-in-memory-web-api";
 import {HttpModule} from "@angular/http";
-import './rxjs-extensions';
+import "./rxjs-extensions";
 import {HeroSearchComponent} from "./component/hero-search.component";
+import {HighlightDirective} from "./directive/highlight.directive";
+import {TitleComponent} from "./component/title.component";
+import {UserService} from "./service/user.service";
+import {AwesomePipe} from "./pipe/awesome.pipe";
+import {ContactComponent} from "./component/contact/contact.component";
+import {HighlightDirective as ContactHighlightDirective} from "./directive/contact/highlight.directive";
+import {ContactService} from "./service/concact.service";
 
 
 @NgModule({
@@ -27,9 +34,18 @@ import {HeroSearchComponent} from "./component/hero-search.component";
         DashboardComponent,
         HeroDetailComponent,
         HeroesComponent,
-        HeroSearchComponent
+        HeroSearchComponent,
+        HighlightDirective,
+        TitleComponent,
+        AwesomePipe,
+        ContactComponent,
+        ContactHighlightDirective
     ],
-    providers: [HeroService],
+    providers: [
+        HeroService,
+        UserService,
+        ContactService
+    ],
     bootstrap: [AppComponent]
 })
 export class AppModule {

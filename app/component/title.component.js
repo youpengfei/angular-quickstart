@@ -8,20 +8,28 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-var core_1 = require("@angular/core");
-var AppComponent = (function () {
-    function AppComponent() {
-        this.title = 'Tour of Hero';
+var core_1 = require('@angular/core');
+var user_service_1 = require("../service/user.service");
+var TitleComponent = (function () {
+    function TitleComponent(userService) {
+        this.subtitle = '';
+        this.title = 'Angular Modules';
+        this.user = '';
+        this.user = userService.userName;
     }
-    AppComponent = __decorate([
+    __decorate([
+        core_1.Input(), 
+        __metadata('design:type', Object)
+    ], TitleComponent.prototype, "subtitle", void 0);
+    TitleComponent = __decorate([
         core_1.Component({
             moduleId: module.id,
-            selector: 'my-app',
-            template: "\n  <h1>{{title}}</h1>\n  <nav>\n    <a routerLink=\"/dashboard\" routerLinkActive=\"active\">Dashboard</a>\n    <a routerLink=\"/heroes\" routerLinkActive=\"active\">Heroes</a>\n    <a routerLink=\"/contact\" routerLinkActive=\"active\">Contact</a>\n  </nav>\n  <router-outlet></router-outlet>\n", styleUrls: ['../css/app.component.css'],
+            selector: 'app-title',
+            templateUrl: '../template/title.component.html',
         }), 
-        __metadata('design:paramtypes', [])
-    ], AppComponent);
-    return AppComponent;
+        __metadata('design:paramtypes', [user_service_1.UserService])
+    ], TitleComponent);
+    return TitleComponent;
 }());
-exports.AppComponent = AppComponent;
-//# sourceMappingURL=app.component.js.map
+exports.TitleComponent = TitleComponent;
+//# sourceMappingURL=title.component.js.map
