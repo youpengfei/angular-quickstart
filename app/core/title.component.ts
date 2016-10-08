@@ -1,10 +1,10 @@
 import {Component, Input} from '@angular/core';
-import {UserService} from "../service/user.service";
+import {UserService} from "./user.service";
 
 @Component({
     moduleId: module.id,
     selector: 'app-title',
-    templateUrl: '../template/title.component.html',
+    templateUrl: 'title.component.html',
 })
 export class TitleComponent {
     @Input() subtitle = '';
