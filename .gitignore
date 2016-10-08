@@ -42,4 +42,6 @@ jspm_packages
 node_modules/
 app/*.js
 app/*.map
+app/**/*.js
+app/**/*.map
 env
