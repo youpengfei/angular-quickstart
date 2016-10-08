@@ -9,11 +9,18 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require("@angular/core");
-var concact_1 = require("../concact");
+var Contact = (function () {
+    function Contact(id, name) {
+        this.id = id;
+        this.name = name;
+    }
+    return Contact;
+}());
+exports.Contact = Contact;
 var CONTACTS = [
-    new concact_1.Contact(21, 'Sam Spade'),
-    new concact_1.Contact(22, 'Nick Danger'),
-    new concact_1.Contact(23, 'Nancy Drew')
+    new Contact(21, 'Sam Spade'),
+    new Contact(22, 'Nick Danger'),
+    new Contact(23, 'Nancy Drew')
 ];
 var FETCH_LATENCY = 500;
 var ContactService = (function () {
